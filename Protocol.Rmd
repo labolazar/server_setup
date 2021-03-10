@@ -326,6 +326,11 @@ done`
 
 [Githup](https://github.com/s-andrews/FastQC)
 
+Download the Fastqc program from the FastQC A quality control application for high throughput sequence 
+data section (https://www.bioinformatics.babraham.ac.uk/projects/fastqc/)
+Instructions for installation and setup (https://raw.githubusercontent.com/s-andrews/FastQC/master/INSTALL.txt)
+
+
 ### About 
 
 This will generate HTML files that you can transfer (scp) to your local computer in order to view them in a chrome web page 
