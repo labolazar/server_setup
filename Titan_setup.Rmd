@@ -53,6 +53,6 @@ FastQC is a program designed to spot potential problems in high throughput seque
 
 1. Interleaving : <font color='green'>interleave_fastq.py</font> 
 
-The source code is available on this [GitHub gist](https://gist.github.com/ngcrawford/2232505). You can copy it and paste it using your favorite text editor (vim, nano, etc)
+Script was modified from [GitHub gist](https://gist.github.com/ngcrawford/2232505) in order to work using Python3 
   
   Interleaving merge the R1 and R2 reads together in one file
