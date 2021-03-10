@@ -33,12 +33,18 @@ chmod +x interleave.py
 python3 interleave.py 
 ```
 
-looping if you have multiple files 
+Looping if you have multiple files 
 ```{bash, highlight=TRUE, eval=FALSE}
 for R1 in *_R1_001.fastq ; do python3 interleave.py $R1 "${R1/R1/R2}"  > $R1.interleave.fastq ; done  
 ```
 
 I am looking for a better way to rename the interleave file from the loop. But this will do for now. 
+
+View the top of the new interleaved files to make sure R1 and R2 one after the others 
+```{bash, highlight=TRUE, eval=FALSE}
+grep @M interleaved.fastq | head
+```
+*grep (search) @M (symbol or letter) nameofdocument | (pipeline) head (show me just the first lines)* 
 
 Move all the interleave files to a new folder called `interleave`
 
