@@ -1,0 +1,44 @@
+---
+title: "Protocol for metagenomic analyses"
+author: "Karine Villeneuve"
+date: "`r Sys.Date()`"
+output: 
+  html_document:
+    fig_caption: yes
+    highlight: textmate
+    number_sections: yes
+    theme: cosmo
+    toc: yes
+    toc_float: yes
+  html_notebook: 
+    toc: yes
+geometry: margin=1cm
+fontsize: 11pt
+---
+
+# Pre-Assembly 
+
+## Unzip 
+In the folder with your raw `fastq.gz`
+```{bash, highlight=TRUE, eval=FALSE}
+gunzip *.gz
+```
+
+## Interleaving 
+I used the script <font color='green'>interleave_fastq.py</font> from this [GitHub gist](https://gist.github.com/ngcrawford/2232505). You can also copy the script from the folder Script Métagénomique of our Teams.
+
+Make the script executable and run the script using python 
+```{bash, highlight=TRUE, eval=FALSE}
+chmod +x interleave_fastq.py
+python3 interleave_fastq.py 
+```
+
+**Quite long, maybe run with nohup ?** 
+
+looping if you have multiple files 
+```{bash, highlight=TRUE, eval=FALSE}
+for R1 in *_R1_001.fastq ; do python3 interleave_fastq.py $R1 "${R1/R1/R2}"  > ok.fastq ; done 
+```
+
+
+

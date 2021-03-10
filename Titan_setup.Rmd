@@ -1,0 +1,58 @@
+---
+title: "Setting up Titan Server"
+author: "Karine Villeneuve"
+date: "`r Sys.Date()`"
+output: 
+  html_document:
+    fig_caption: yes
+    highlight: textmate
+    number_sections: yes
+    theme: cosmo
+    toc: yes
+    toc_float: yes
+  pdf_document:
+    fig_caption: yes
+    highlight: zenburn
+    toc: yes
+    toc_depth: 4
+  word_document: default
+  html_notebook: 
+    toc: yes
+geometry: margin=1cm
+fontsize: 11pt
+---
+# Programs to download
+
+The first thing I did was open this [protocol]() I wrote while I was in Texas and identify which programs and scripts were used.
+
+## Python 
+
+Python3 was already installed on the server. I did not need to install it. 
+
+## Sickle 
+
+[Github](https://github.com/najoshi/sickle)
+
+Sickle is a tool that uses sliding windows along with quality and length thresholds to determine when quality is sufficiently low to trim the 3’-end of reads and also determines when the quality is sufficiently high enough to trim the 5’-end of reads.
+
+## FastQC
+
+[Github](https://github.com/s-andrews/FastQC) Project [web page](http://www.bioinformatics.babraham.ac.uk/projects/fastqc/) for downloads 
+
+FastQC is a program designed to spot potential problems in high throughput sequencing data sets. It runs a set of analyses on one or more raw sequence files in fastq or bam format and produces a report which summarizes the results.
+
+## Assembly programs 
+
+**IDBA**
+
+[Github](https://github.com/loneknightpy/idba)
+
+
+
+# Getting the different scripts 
+
+1. Interleaving : <font color='green'>interleave_fastq.py</font> 
+
+The source code is available on this [GitHub gist](https://gist.github.com/ngcrawford/2232505). You can copy it and paste it using your favorite text editor (vim, nano, etc)
+  
+  Interleaving merge the R1 and R2 reads together in one file
