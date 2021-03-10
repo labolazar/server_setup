@@ -25,20 +25,28 @@ gunzip *.gz
 ```
 
 ## Interleaving 
-I used the script <font color='green'>interleave_fastq.py</font> from this [GitHub gist](https://gist.github.com/ngcrawford/2232505). You can also copy the script from the folder Script Métagénomique of our Teams.
+I used the script <font color='green'>interleave_fastq.py</font>. You can also copy the script from the folder Script Métagénomique of our Teams.
 
 Make the script executable and run the script using python 
 ```{bash, highlight=TRUE, eval=FALSE}
-chmod +x interleave_fastq.py
-python3 interleave_fastq.py 
+chmod +x interleave.py
+python3 interleave.py 
 ```
-
-**Quite long, maybe run with nohup ?** 
 
 looping if you have multiple files 
 ```{bash, highlight=TRUE, eval=FALSE}
-for R1 in *_R1_001.fastq ; do python3 interleave_fastq.py $R1 "${R1/R1/R2}"  > ok.fastq ; done 
+for R1 in *_R1_001.fastq ; do python3 interleave.py $R1 "${R1/R1/R2}"  > $R1.interleave.fastq ; done  
 ```
+
+I am looking for a better way to rename the interleave file from the loop. But this will do for now. 
+
+Move all the interleave files to a new folder called `interleave`
+
+## SICKLE 
+
+
+
+
 
 
 
