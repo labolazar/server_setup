@@ -35,11 +35,24 @@ Python3 was already installed on the server. I did not need to install it.
 
 Sickle is a tool that uses sliding windows along with quality and length thresholds to determine when quality is sufficiently low to trim the 3’-end of reads and also determines when the quality is sufficiently high enough to trim the 5’-end of reads.
 
+Dependencies : 
+- [GCC](https://gcc.gnu.org/git.html)
+- [Zlip](https://www.systutorials.com/how-to-install-the-zlib-library-in-ubuntu/) `sudo apt install zlib1g`
+
+After installing these programs there was a folder called `sickle`. I moved into the folder and called the function `make` which prompted the installation of sickle. 
+
+
 ## FastQC
 
 [Github](https://github.com/s-andrews/FastQC) Project [web page](http://www.bioinformatics.babraham.ac.uk/projects/fastqc/) for downloads 
 
-FastQC is a program designed to spot potential problems in high throughput sequencing data sets. It runs a set of analyses on one or more raw sequence files in fastq or bam format and produces a report which summarizes the results.
+FastQC is a program designed to spot potential problems in high throughput sequencing data sets. It runs a set of analyses on one or more raw sequence files in fastq or bam format and produces a report which summarizes the results. FastQC is a java application.  In order to run it needs your system to have a suitable
+Java Runtime Environment (JRE) installed. You can check whether java is installed by opening the 'cmd' program on windows, or any shell on linux and typing: `java -version`. If java isn't installed then you can add it by doing: `sudo apt install default-jre` 
+
+```
+git clone https://github.com/s-andrews/FastQC.git
+sudo apt install fastqc 
+```
 
 ## Assembly programs 
 
