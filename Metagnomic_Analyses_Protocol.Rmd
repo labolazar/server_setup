@@ -104,5 +104,22 @@ do
 done
 ```
 
+# Post-Assembly stats 
+
+Number of contigs 
+```
+grep -c ">" contig.fa 
+```
+Lenght of contigs and histogram
+```
+seqkit fx2tab --length --name --header-line contig.fa > length.tab 
+cut -f 2 length.tab > lengths.csv
+```
+Remove the first row of the document lengths (word length) using vi and use pipeline to create histogram with the lentghs documents
+```
+less lenghts | Rscript -e 'data=abs(scan(file="stdin")); png("seq.png"); hist(data,xlab="sequences", xlim=c(0,20000))'
+```
+The output is a png file called “seq.png”. If x axis of the histogram is not right change the xlim=c(x,x) values. Copy the file to your local computer to view it (in your local computer terminal navigate to the local directory where you want the file to be copied)
+
 
 
