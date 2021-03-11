@@ -60,6 +60,11 @@ sudo apt install fastqc
 
 [Github](https://github.com/loneknightpy/idba)
 
+```
+git clone https://github.com/loneknightpy/idba.git
+sudo apt install idba
+```
+
 
 
 # Getting the different scripts 
@@ -69,3 +74,7 @@ sudo apt install fastqc
 Script was modified from [GitHub gist](https://gist.github.com/ngcrawford/2232505) in order to work using Python3. Script is now available in Teams. 
   
   Interleaving merge the R1 and R2 reads together in one file
+  
+2. GC content of assembly :  <font color='blue'>lenght.gc </font> 
+
+Script was scp from Midgard (Texas) to my computer and is now available in Teams. (scp -P 2022 karine@146.6.184.138:/home/scripts/length+GC.pl .)
