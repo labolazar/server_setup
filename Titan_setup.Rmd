@@ -81,6 +81,59 @@ git clone https://github.com/loneknightpy/idba.git
 sudo apt install idba
 ```
 
+**Megahit**
+
+[Github](https://github.com/voutcn/megahit)
+
+```
+git clone https://github.com/voutcn/megahit.git
+sudo snap install cmake  # version 3.19.6
+```
+
+**metaSPAdes**
+
+
+```
+sudo apt install spades
+```
+
+## Mapping
+
+**VE**
+
+[Github](https://github.com/imrambo/genome_mapping)
+
+```
+git clone https://github.com/imrambo/genome_mapping.git
+```
+
+## Bin quality
+
+**CheckM**
+
+[Github](https://github.com/Ecogenomics/CheckM/wiki/Installation#how-to-install-checkm)
+
+Must have these programs installed in the same path:
+
+-HMMER
+http://hmmer.org/
+
+-prodigal
+
+[Github](https://github.com/hyattpd/Prodigal)
+```
+sudo apt install prodigal
+```
+
+-pplacer
+https://matsen.fhcrc.org/pplacer/
+
+```
+pip3 install numpy (or sudo apt install python3-pip)
+pip3 install matplotlib
+pip3 install pysam
+pip3 install checkm-genome
+```
 
 
 # Getting the different scripts 
