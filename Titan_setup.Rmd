@@ -135,6 +135,18 @@ pip3 install pysam
 pip3 install checkm-genome
 ```
 
+## Seqkit 
+
+Download conda
+Verify the latest release on the [website](https://repo.anaconda.com/archive/) and change the path is necessary. 
+
+install 
+```
+wget https://repo.anaconda.com/archive/Anaconda3-5.3.1-Linux-x86_64.sh -O ~/anaconda.sh
+bash ~/anaconda.sh -b -p $HOME/anaconda
+source <path to anaconda>/anaconda/bin/activate
+conda install -c bioconda seqkit
+```
 
 # Getting the different scripts 
 
