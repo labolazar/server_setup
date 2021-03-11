@@ -362,6 +362,12 @@ fastqc *.fastq
 ## Fastq to fasta with seqtk
 
 [Githup](https://github.com/lh3/seqtk)
+To download:
+```{bash, highlight=TRUE, eval=FALSE}
+git clone https://github.com/lh3/seqtk.git;
+cd seqtk; make
+sudo apt install seqtk
+```
 
 a. Gzip the combined_trimmed.fastq file
 
