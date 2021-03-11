@@ -135,17 +135,126 @@ pip3 install pysam
 pip3 install checkm-genome
 ```
 
-## Seqkit 
+## Phylogenetic tree
 
-Download conda
-Verify the latest release on the [website](https://repo.anaconda.com/archive/) and change the path is necessary. 
+**Phylosift**
 
-install 
+[Github](https://github.com/gjospin/PhyloSift)
+
+Download the tarball archive from
+
+   http://edhar.genomecenter.ucdavis.edu/~koadman/phylosift/phylosift_latest.tar.bz2
+
+Navigate to the directory where you downloaded the software and run :
+
 ```
-wget https://repo.anaconda.com/archive/Anaconda3-5.3.1-Linux-x86_64.sh -O ~/anaconda.sh
-bash ~/anaconda.sh -b -p $HOME/anaconda
-source <path to anaconda>/anaconda/bin/activate
-conda install -c bioconda seqkit
+tar -xvf phylosift_latest.tar.bz2
+```
+
+PhyloSift is ready for use (Refer to the Usage section) but may require dependancies. 
+
+To see needed dependacies run from phylosift directory:
+```
+bin/phylosift
+```
+
+It may show this type of error message:
+
+```
+you may need to install the File::NFSLock module
+```
+Which means you need to run the following type of command (as `sudo` if needed):
+```
+cpanm File::NFSLock
+```
+where File::NFSLock is the name of the module required.
+
+repeate till there are no more dependancies required.
+
+if you do not have cpanm run:
+```
+cpan App::cpanminus
+```
+which installs it,
+
+if you don't have cpan, install it.
+
+```
+sudo apt-get install git
+```
+To check out the PhyloSift development repository, run the following
+command :
+```
+git clone https://github.com/rvosa/bio-phylo.git
+perl Makefile.PL
+make
+make test # Optional, runs unit tests, which should pass
+make install
+```
+```
+git clone git://github.com/gjospin/PhyloSift.git
+```
+
+It may also be necessary to install several support packages,
+including BioPerl, Bio::Phylo, and others. BioPerl offers bioperl-live from github,
+we suggest installing other dependencies using cpan.
+
+## Metabolic Pathway
+
+**Metabolic**
+
+[Github](https://github.com/AnantharamanLab/METABOLIC#install_instructions)
+
+```
+git clone https://github.com/AnantharamanLab/METABOLIC.git
+```
+Then, in the directory (Metabolic directory):
+
+Perl modules
+```
+sudo apt install hmmer
+sudo cpanm Data::Dumper
+sudo cpanm POSIX
+sudo cpanm Getopt::Long
+sudo cpanm Statistics::Descriptive
+sudo cpanm Array::Split
+sudo cpanm Bio::SeqIO
+sudo cpanm Bio::Perl
+sudo cpanm Bio::Tools::CodonTable
+sudo cpanm Carp
+sudo cpanm File::Spec
+sudo cpanm File::Basename
+sudo cpanm Parallel::ForkManager
+```
+
+R packages
+```
+install.packages("versions")
+library(versions)
+install.versions("diagram", "1.6.4")
+install.versions("forcats", "0.5.0")
+install.versions("digest", "0.6.25")
+install.versions("htmltools", "0.4.0")
+install.versions("rmarkdown", "2.1")
+install.versions("reprex", "0.3.0")
+install.versions("tidyverse", "1.3.0")
+install.versions("ggthemres", "4.2.0")
+install.versions("ggalluvial", "0.11.3")
+install.versions("reshape2", "1.4.3")
+install.versions("ggraph", "2.0.2")
+install.versions("pdftools", "2.3")
+install.versions("igraph", "1.2.5")
+install.versions("tidygraph", "1.1.2")
+install.versions("stringr", "1.4.0")
+install.versions("plyr", "1.8.6")
+install.versions("dplyr", "0.8.5")
+install.versions("openxlsx", "4.1.4")
+q()
+```
+Ater the dependencies are installed, do:
+```
+pip install gdown
+sudo sh run_to_setup.sh
 ```
 
 # Getting the different scripts 
