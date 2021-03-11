@@ -50,6 +50,18 @@ Move all the interleave files to a new folder called `interleave`
 
 ## SICKLE 
 
+Running sickle with a bash script 
+
+```
+#!/bin/bash
+
+for i in *.fastq
+
+do
+        sickle pe -c $i -t sanger -m $i.trim.fastq -s $i.singles.fastq
+done
+```
+sickle pe (paired end) -c (inputfile) -t sanger (from illumina) -m (outputfilename) -s (exclutedreadsfilename)
 
 
 
