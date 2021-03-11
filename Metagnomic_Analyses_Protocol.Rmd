@@ -63,6 +63,32 @@ done
 ```
 sickle pe (paired end) -c (inputfile) -t sanger (from illumina) -m (outputfilename) -s (exclutedreadsfilename)
 
+This generates two files for a each fastq you input : `.trim.fastq` and `.singles.fastq`. We only need the `.trim.fastq` and therefor you can move all the others to another folder. 
+
+## Quality check with Fastqc 
+
+You can run FastQC in a non-interactive mode where you specify the files you want to process on the command line and FastQC will generate an HTML report for
+each file without launching a user interface.  This would allow FastQC to be run as part of an analysis pipeline. To run non-interactively you simply have to specify a list of files to process on the commandline. You can specify as many files to process in a single run as you like.  
+
+Run fastqc on the output (trimmed) file and the non-trimmed file
+
+**VERY LONG SHOULD USE NANO** 
+```
+fastqc *.fastq --outdir=/home/kvilleneuve/Metagenomic_analyses/interleaved/fastqc
+``` 
+You must transfer the HTML files from the fastqc directory to your computer in order to view them in your a browser. 
+
+## Fastq to Fasta 
+
+Gzip the combined_trimmed.fastq file using nohup (very long) 
+```
+!#/bin/bash
+gzip *.fastq
+```
+Convert the file from fastq to fasta
+```
+seqtk seq -a MF_combined_trimmed.gz > MF.fa
+```
 
 
 
