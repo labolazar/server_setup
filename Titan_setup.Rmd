@@ -137,6 +137,19 @@ pip3 install checkm-genome
 
 ## Phylogenetic tree
 
+## Seqkit 
+
+Download conda
+Verify the latest release on the [website](https://repo.anaconda.com/archive/) and change the path is necessary. 
+
+install 
+```
+wget https://repo.anaconda.com/archive/Anaconda3-5.3.1-Linux-x86_64.sh -O ~/anaconda.sh
+bash ~/anaconda.sh -b -p $HOME/anaconda
+source <path to anaconda>/anaconda/bin/activate
+conda install -c bioconda seqkit
+```
+
 **Phylosift**
 
 [Github](https://github.com/gjospin/PhyloSift)
