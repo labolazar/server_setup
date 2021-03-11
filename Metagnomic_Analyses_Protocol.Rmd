@@ -80,17 +80,29 @@ You must transfer the HTML files from the fastqc directory to your computer in o
 
 ## Fastq to Fasta 
 
-Gzip the combined_trimmed.fastq file using nohup (very long) 
+Gzip the combined_trimmed.fastq file using nohup **(very long)** 
 ```
 !#/bin/bash
 gzip *.fastq
 ```
 Convert the file from fastq to fasta
-```
-seqtk seq -a MF_combined_trimmed.gz > MF.fa
-```
 
+If you have many files use nohup as it can take quite some time 
+```
+for i in *.gz ; do seqtk seq -a $i > $i.fa ; done 
+```
+# Assembly 
 
+## IDBA 
+
+```
+for i in *.fa
+
+do
+        idba_ud -l $i -o $i.assembly --pre_correction --mink 65 --maxk 115 --step 10 --seed_kmer 55 i--num_threads 20
+
+done
+```
 
 
 
