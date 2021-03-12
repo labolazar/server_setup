@@ -104,6 +104,21 @@ do
 done
 ```
 
+## Megahit 
+
+```
+#!/bin/bash
+
+for i in *.fa
+
+do
+
+megahit --12 $i --k-list 21,33,55,77,99,121 --min-count 2 --verbose -t 25 -o ~/Metagenomic_analyses/fasta/megahit_out_$1 --out-prefix megahit_$i  
+
+done
+``` 
+
+
 # Post-Assembly stats 
 
 Number of contigs 
@@ -116,10 +131,27 @@ seqkit fx2tab --length --name --header-line contig.fa > length.tab
 cut -f 2 length.tab > lengths.csv
 ```
 Remove the first row of the document lengths (word length) using vi and use pipeline to create histogram with the lentghs documents
+
+** Eventually remove this **
 ```
-less lenghts | Rscript -e 'data=abs(scan(file="stdin")); png("seq.png"); hist(data,xlab="sequences", xlim=c(0,20000))'
+less lenghts | Rscript -e 'data=abs(scan(file="stdin")); png("seq.png"); hist(data,xlab="sequences", breaks=250, xlim=c(0, 5000))'
 ```
 The output is a png file called “seq.png”. If x axis of the histogram is not right change the xlim=c(x,x) values. Copy the file to your local computer to view it (in your local computer terminal navigate to the local directory where you want the file to be copied)
+
+Lenght and GC 
+
+High GC organisms tend not to assemble well and may have an uneven read coverage distribution. I used this modified script `length+GC.pl`
+```
+perl length+GC.pl contig.fa > contig_GC.txt
+```
+**Eventually remove this too** 
+
+Keeping sequences above 2000bp 
+```
+perl -lne 'if(/^(>.*)/){ $head=$1 } else { $fa{$head} .= $_ } END{ foreach $s (keys(%fa)){ print "$s\n$fa{$s}\n" if(length($fa{$s})>2000) }}' contig.fa > 2000kb.fa
+``` 
+
+
 
 
 
