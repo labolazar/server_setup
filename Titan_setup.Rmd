@@ -35,10 +35,9 @@ Anaconda
 wget https://repo.anaconda.com/archive/Anaconda3-2020.11-Linux-x86_64.sh -O ~/anaconda.sh
 bash ~/anaconda.sh -p $HOME/anaconda
 conda update --alls
-conda config --set auto_activate_base false
+conda config --set auto_activate_base false # If you'd prefer that conda's base environment not be activated on startup, set the auto_activate_base parameter to false: 
 ```
 For some odd reason, on logging to the shell the server runs `.profile`  and not the `.bashrc`, therefor, we need to copy the PATH to python from the `.bashrc` shell to the `.profile` so it runs when logging in. 
-
 
 ## Sickle 
 
