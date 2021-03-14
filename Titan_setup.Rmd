@@ -25,9 +25,19 @@ fontsize: 11pt
 
 The first thing I did was open this [protocol]() I wrote while I was in Texas and identify which programs and scripts were used.
 
-## Python 
+## Python and anaconda /conda 
 
 Python3 was already installed on the server. I did not need to install it. 
+
+
+Anaconda 
+THIS DOES NOT WORK FOR SOME ODD REASON..... : 
+```{bash, eval=FALSE}
+wget https://repo.anaconda.com/archive/Anaconda3-2020.11-Linux-x86_64.sh -O ~/anaconda.sh
+bash ~/anaconda.sh -p $HOME/anaconda
+conda update --all
+```
+I downloaded the Anaconda3 installer on my computer and pushed it on the server. 
 
 ## Sickle 
 
@@ -86,8 +96,7 @@ sudo apt install idba
 [Github](https://github.com/voutcn/megahit)
 
 ```
-git clone https://github.com/voutcn/megahit.git
-sudo snap install cmake  # version 3.19.6
+conda install -c bioconda megahit
 ```
 
 **metaSPAdes**
@@ -144,9 +153,6 @@ Verify the latest release on the [website](https://repo.anaconda.com/archive/) a
 
 install 
 ```
-wget https://repo.anaconda.com/archive/Anaconda3-5.3.1-Linux-x86_64.sh -O ~/anaconda.sh
-bash ~/anaconda.sh -b -p $HOME/anaconda
-source <path to anaconda>/anaconda/bin/activate
 conda install -c bioconda seqkit
 ```
 
