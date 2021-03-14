@@ -31,13 +31,14 @@ Python3 was already installed on the server. I did not need to install it.
 
 
 Anaconda 
-THIS DOES NOT WORK FOR SOME ODD REASON..... : 
 ```{bash, eval=FALSE}
 wget https://repo.anaconda.com/archive/Anaconda3-2020.11-Linux-x86_64.sh -O ~/anaconda.sh
 bash ~/anaconda.sh -p $HOME/anaconda
-conda update --all
+conda update --alls
+conda config --set auto_activate_base false
 ```
-I downloaded the Anaconda3 installer on my computer and pushed it on the server. 
+For some odd reason, on logging to the shell the server runs `.profile`  and not the `.bashrc`, therefor, we need to copy the PATH to python from the `.bashrc` shell to the `.profile` so it runs when logging in. 
+
 
 ## Sickle 
 
