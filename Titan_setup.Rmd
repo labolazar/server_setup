@@ -227,7 +227,19 @@ we suggest installing other dependencies using cpan.
 ```
 git clone https://github.com/AnantharamanLab/METABOLIC.git
 ```
-Then, in the directory (Metabolic directory):
+In the PATH, these dependencies should be installed:
+
+1. Perl (https://www.perl.org/)
+2. HMMER (http://hmmer.org/)
+3. Prodigal (https://github.com/hyattpd/Prodigal)
+4. Sambamba (https://github.com/biod/sambamba)
+5. BAMtools (https://github.com/pezmaster31/bamtools)
+6. CoverM (https://github.com/wwood/CoverM)
+7. R (https://www.r-project.org/)
+8. Diamond (https://github.com/bbuchfink/diamond)
+9. Samtools (https://www.htslib.org/)
+10. Bowtie2 (https://github.com/BenLangmead/bowtie2)
+11. Gtdb-tk (https://ecogenomics.github.io/GTDBTk/)
 
 Perl modules
 ```
@@ -274,6 +286,9 @@ Ater the dependencies are installed, do:
 ```
 pip install gdown
 sudo sh run_to_setup.sh
+
+perl METABOLIC-G.pl -test true
+perl METABOLIC-C.pl -test true
 ```
 
 # Getting the different scripts 
