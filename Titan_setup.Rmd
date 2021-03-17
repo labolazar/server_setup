@@ -229,6 +229,12 @@ It may also be necessary to install several support packages,
 including BioPerl, Bio::Phylo, and others. BioPerl offers bioperl-live from github,
 we suggest installing other dependencies using cpan.
 
+**RAWxML**
+[Github](https://github.com/stamatak/standard-RAxML)
+
+```
+git clone https://github.com/stamatak/standard-RAxML.git
+```
 ## Metabolic Pathway
 
 **Metabolic**
