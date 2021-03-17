@@ -234,6 +234,7 @@ we suggest installing other dependencies using cpan.
 
 ```
 git clone https://github.com/stamatak/standard-RAxML.git
+sudo apt install raxml
 ```
 ## Metabolic Pathway
 
