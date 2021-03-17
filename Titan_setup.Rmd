@@ -144,6 +144,17 @@ pip3 install pysam
 pip3 install checkm-genome
 ```
 
+## Bin Cleaning
+
+**MM Genome**
+MM Genome: http://madsalbertsen.github.io/multi-metagenome/docs/overview.html
+
+```
+wget https://github.com/MadsAlbertsen/multi-metagenome/tarball/master
+tar -xzf master
+```
+
+
 ## Phylogenetic tree
 
 ## Seqkit 
